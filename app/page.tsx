@@ -1,113 +1,93 @@
+import Navbar from "@/components/Navbar";
+import { ServicesBannerContent } from "@/constants/services";
+import Footer from "@/components/Footer";
+import { clients } from "@/constants/clients";
 import Image from "next/image";
+import Form from "@/components/Form";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import HomeBanner from "@/components/HomeBanner";
+import CallToAction from "@/components/CallToAction";
 
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
-
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+  return <div className="bg-black text-white w-screen">
+    <Navbar></Navbar>
+    <HomeBanner></HomeBanner>
+    <OurServices></OurServices>
+    <WhyChooseUs></WhyChooseUs>
+    <ClientsSection></ClientsSection>
+    <CallToAction></CallToAction>
+    <Footer></Footer>
+    <Form></Form>
+  </div>;
 }
+
+
+const OurServices = () => {
+  return (
+    <div className="text-black bg-white py-16 mt-16 max-sm:mt-8 h-auto relative">
+      <div className="clipart-left z-0"></div>
+      <div className="flex flex-col gap-5 max-md:gap-2 max-md:justify-center z-50">
+        <h1 className="font-normal max-sm:text-4xl text-7xl w-fit m-auto text-center z-50">OUR SERVICES</h1>
+        <p className="text-light w-2/3 max-sm:w-full max-sm:p-4 m-auto text-justify z-50">We provide a wide range of Digital Marketing & IT Services for your business.  Our experts work on your complete digital landscape and align it with your business goals. Our team members give their attention to the clients’  exponential growth regardless of commitment. We provide the most economical approach to ensure that your business is surely marketed.</p>
+      </div>
+      <div className="grid grid-cols-3 max-md:grid-cols-1 max-md:px-8 max-md:pt-6 px-16 pt-16 gap-5 z-50">
+        {ServicesBannerContent.map(service => {
+          return <Accordion type="single"  collapsible key={service.title} className="z-50">
+            <AccordionItem value={service.title}>
+              <AccordionTrigger>{service.title}</AccordionTrigger>
+              <AccordionContent>
+                {service.description}
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
+        })}
+      </div>
+    </div>
+  )
+}
+
+const WhyChooseUs = () => {
+  return (
+    <div className="relative bg-gray-100 text-black h-auto z-50 py-16 flex gap-10 flex-col w-screen max-sm:pl-5 pl-16 justify-start pt-16">
+      <div className="clipart-right"></div>
+      <div className="flex flex-col gap-2">
+        <h1 className="text-7xl max-sm:text-4xl font-normal ">WHY CHOOSE US?</h1>
+        <p className="font-light text-md w-1/3 max-sm:w-full">There are a lot of online marketing companies out there offering a bunch of digital marketing services. So why choose us over them? What makes us unique? </p>
+      </div>
+
+      <ul className="list-disc w-2/3 z-50 max-sm:text-sm max-sm:w-full max-sm:px-4 text-lg leading-8 flex flex-col gap-2">
+        <li>First, we treat each company and brand a unique project & the approach for each project is different. So, all our services are tailor made for you.</li>
+        <li>At InfinitySprint, we create <strong>our own strategies, funnels, and marketing solutions</strong> to boost your brand in order to get on the top.</li>
+        <li>We are obsessed with <strong>ROI, targeted acquisition, Retention and building a BRAND</strong>. Our team is behind the early and continued success of many startups, established brands and corporations across the globe. </li>
+        <li>We make <em>“digital beautiful!”</em> Every story we tell, every brand we build, and every marketing strategy we develop not only looks attractive but feels and functions ravishing too.</li>
+      </ul>
+      
+    </div>
+  )
+}
+
+const ClientsSection = () => {
+  return <div className="flex justify-center h-auto w-screen bg-white">
+  <div className="bg-white p-20 flex z-50 w-full flex-col items-center">
+    <h1 className="text-7xl max-sm:text-4xl font-normal text-black">OUR CLIENTS</h1>
+    <div className="flex flex-row max-sm:flex-col w-full items-center justify-center gap-10 max-sm:gap-2">
+      {clients.map(client=>{
+        return <div key={client.title}>
+            <Image className="p-2"
+            src={client.imageLink}
+            alt={client.title}
+            width={200}
+            height={200}
+            ></Image>
+          </div>
+      })}
+    </div>
+    </div>
+    </div>
+}
+
