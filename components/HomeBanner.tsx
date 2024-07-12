@@ -19,8 +19,8 @@ const HomeBanner = () => {
         </ul>
       
         <div>
-          <h1 className='text-7xl typewriter-animation max-md:text-4xl text-center'>Limitless Innovation,</h1>
-          <h1 className='text-7xl typewriter-animation max-md:text-4xl text-center'>Endless Solution.</h1>
+          <h1 className='text-7xl max-sm:text-3xl typewriter-animation max-md:text-4xl text-center'>Limitless Innovation,</h1>
+          <h1 className='text-7xl max-sm:text-3xl typewriter-animation max-md:text-4xl text-center'>Endless Solution.</h1>
 
         </div>
         
