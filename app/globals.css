@@ -121,9 +121,18 @@
 
 .clipart-right{
   clip-path: circle(31.1% at 100% 50%);
-  transform: translate(-5%, 0%);
+  transform: translate(-4%, 0%);
   position: absolute;
   background-color: pink;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+}
+
+.clipart-left-2{
+  clip-path: circle(31.1% at 0 49%);
+  position: absolute;
+  background-color:floralwhite;
   width: 100vw;
   height: 100vh;
   z-index: 0;

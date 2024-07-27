@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import { ServicesBannerContent } from "@/constants/services";
 import Footer from "@/components/Footer";
 import { clients } from "@/constants/clients";
+import { partners } from "@/constants/partners";
 import Image from "next/image";
 import Form from "@/components/Form";
 import {
@@ -19,7 +20,7 @@ export default function Home() {
     <HomeBanner></HomeBanner>
     <OurServices></OurServices>
     <WhyChooseUs></WhyChooseUs>
-    <ClientsSection></ClientsSection>
+    <FeaturedSection></FeaturedSection>
     <CallToAction></CallToAction>
     <Footer></Footer>
     <Form></Form>
@@ -71,18 +72,35 @@ const WhyChooseUs = () => {
   )
 }
 
-const ClientsSection = () => {
-  return <div className="flex justify-center h-auto w-screen bg-white">
-  <div className="bg-white p-20 flex z-50 w-full flex-col items-center">
-    <h1 className="text-7xl max-sm:text-4xl font-normal text-black">OUR CLIENTS</h1>
-    <div className="flex flex-row max-sm:flex-col w-full items-center justify-center gap-10 max-sm:gap-2">
+const FeaturedSection = () => {
+  return <div className="flex flex-col z-50 py-12 justify-evenly max-sm:gap-10 h-auto w-screen bg-white">
+  <div className="clipart-left-2"></div>
+  <div className="flex z-50 w-full flex-col items-center">
+    <h1 className="text-5xl max-sm:text-4xl m-0 bg-black font-normal text-white">Our Clients</h1>
+    <div className="flex flex-row max-sm:flex-col w-full items-center justify-center gap-10">
       {clients.map(client=>{
         return <div key={client.title}>
-            <Image className="p-2"
+            <Image className="max-sm:w-[150px]"
             src={client.imageLink}
             alt={client.title}
-            width={200}
-            height={200}
+            width={250}
+            height={250}
+            ></Image>
+          </div>
+      })}
+    </div>
+    </div>
+
+    <div className="flex z-50 w-full flex-col items-center">
+    <h1 className="text-5xl bg-black max-sm:text-4xl font-normal mb-5 text-white">Our Partners</h1>
+    <div className="flex flex-row max-sm:flex-col m-0 w-full items-center justify-center gap-10 max-sm:gap-2">
+      {partners.map(partner=>{
+        return <div key={partner.title}>
+            <Image className={`max-sm:${partner.title=='Google'?'w-[150px]':'w-[150px]'} max-sm:${partner.title=='Google'?'h-[100px]':'h-auto'}`}
+            src={partner.imageLink}
+            alt={partner.title}
+            width={300}
+            height={300}
             ></Image>
           </div>
       })}

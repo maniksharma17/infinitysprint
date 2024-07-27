@@ -104,7 +104,7 @@ const MobileNavBar = () => {
   const [formOpen, setFormOpen] = useRecoilState(formAtom);
   return <Sheet>
     <SheetTrigger className='font-light z-40 xl:hidden text-md text-white border-none px-3 py-1 rounded'>Info</SheetTrigger>
-    <SheetContent className='bg-black text-white w-full' side='left'>
+    <SheetContent className='bg-black border-0 text-white w-full' side='left'>
       <SheetHeader>
         <SheetTitle>
           <div className='flex flex-row gap-5 items-center'>
@@ -126,7 +126,7 @@ const MobileNavBar = () => {
 const MobileNavbarMenu = () => {
   return <Accordion type="single" collapsible className='mt-5'>
     <AccordionItem value="item-1">
-      <AccordionTrigger className='no-underline text-white hover:no-underline text-xl font-light'>Solutions</AccordionTrigger>
+      <AccordionTrigger className='no-underline text-white hover:no-underline text-lg font-light'>Solutions</AccordionTrigger>
       <AccordionContent>
         <div className='flex flex-col w-full flex-wrap gap-2'>
           {NavbarServices.map(component => {
@@ -139,7 +139,7 @@ const MobileNavbarMenu = () => {
     </AccordionItem>
 
     <AccordionItem value="item-2">
-      <AccordionTrigger className='no-underline text-white hover:no-underline text-xl font-light'>About us</AccordionTrigger>
+      <AccordionTrigger className='no-underline text-white hover:no-underline text-lg font-light'>About us</AccordionTrigger>
       <AccordionContent>
         <div className='flex flex-col w-full flex-wrap gap-2'>
           {AboutMenu.map(component => {

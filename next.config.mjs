@@ -26,11 +26,30 @@ const nextConfig = {
         port: '',
         pathname: '/wp-content/uploads/**',
       },
+      
+      {
+        protocol: 'https',
+        hostname: 'www.ecommerce-nation.com',
+        port: '',
+        pathname: '/wp-content/uploads/**',
+      },
       {
         protocol: 'https',
         hostname: 'mma.prnewswire.com',
         port: '',
         pathname: '/media/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'wordpress.org',
+        port: '',
+        pathname: '/five-for-the-future/files/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.vox-cdn.com',
+        port: '',
+        pathname: '/thumbor/**',
       },
     ],
   },
