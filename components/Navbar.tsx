@@ -3,6 +3,7 @@ import * as React from 'react'
 import { NavbarServices, Services } from '@/constants/services'
 import { AboutMenu } from '@/constants/about'
 import { cn } from '@/lib/utils'
+import Image from 'next/image'
 import { useRecoilState, useSetRecoilState, useRecoilValue } from 'recoil'
 import {
   NavigationMenu,
@@ -36,13 +37,11 @@ const Navbar = () => {
   const [formOpen, setFormOpen] = useRecoilState(formAtom);
   
   return (
-    <nav className='px-12 z-50 max-md:px-3 top-0 py-7 flex flex-row justify-between items-center'>
+    <nav className='px-10 z-50 max-md:px-3 top-0 py-4 flex flex-row justify-between items-center'>
       <Link href={'/'}>
         <div className='flex flex-row gap-10 items-center'>
           <div className='flex flex-row gap-3 items-center'>
-            <iframe loading="lazy" style={{"position": "static", "width": "40px", "height": "40px", "border": "none", "padding": "0", "margin": "0"}}
-              src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGI8tmTbA8&#x2F;jd2dMANmUIHUn2JChdmWNA&#x2F;view?embed">
-            </iframe>
+            <Image src={'/logo.jpeg'} alt='logo' width={70} height={70}/>
             <h1 className='font-bold max-sm:text-xl text-2xl inconsolata-heading'>InfinitySprint</h1>
           </div>
           <NavbarMenu></NavbarMenu>
@@ -69,10 +68,8 @@ const NavbarMenu = () => {
               {NavbarServices.map((component) => (
                 <ListItem
                   key={component.title}
-                  title={component.title}
-                  
+                  title={component.title} 
                 >
-                  
                 </ListItem>
               ))}
             </ul>          
@@ -88,7 +85,6 @@ const NavbarMenu = () => {
                   key={component.title}
                   title={component.title}
                 >
-                  
                 </ListItem>
               ))}
             </ul> 
@@ -108,10 +104,8 @@ const MobileNavBar = () => {
       <SheetHeader>
         <SheetTitle>
           <div className='flex flex-row gap-5 items-center'>
-          <iframe style={{width: '60px', height: '60px', top: 0, left: 0, border: 'none', padding: 0, margin: 0}}
-            src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGI8tmTbA8&#x2F;jd2dMANmUIHUn2JChdmWNA&#x2F;view?embed">
-          </iframe>
-            <h1 className='font-bold max:text-3xl text-xl inconsolata-heading'>InfinitySprint</h1>
+          <Image src={'/logo.jpeg'} alt='logo' width={70} height={70}/>
+          <h1 className='font-bold max:text-3xl text-xl inconsolata-heading'>InfinitySprint</h1>
           </div>
         </SheetTitle>
         <SheetDescription>

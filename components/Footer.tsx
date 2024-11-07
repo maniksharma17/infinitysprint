@@ -1,7 +1,7 @@
 "use client"
 import React from 'react'
 import Link from 'next/link'
-import { Button } from './ui/button'
+import Image from 'next/image'
 
 const Footer = () => {
   return (
@@ -10,9 +10,7 @@ const Footer = () => {
         <Link href={'/'}>
           <div className='flex flex-col gap-3 items-start'>
             <div className='flex flex-row gap-3 items-center'>
-              <iframe loading="lazy" style={{"position": "static", "width": "40px", "height": "40px", "border": "none", "padding": "0", "margin": "0"}}
-                src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAGI8tmTbA8&#x2F;jd2dMANmUIHUn2JChdmWNA&#x2F;view?embed">
-              </iframe>
+              <Image src={'/logo.jpeg'} alt='logo' width={70} height={70}/>
               <h1 className='font-bold max-sm:text-xl text-2xl inconsolata-footer text-white'>InfinitySprint</h1>
             </div>
             <p>Limitless Innovation, <br></br>Endless Solutions.</p>
